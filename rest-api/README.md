@@ -1,3 +1,5 @@
+node app.js
+
 SET NO_PROXY=localhost,127.0.0.1
 
 curl -s -X GET http://localhost:8888/users
