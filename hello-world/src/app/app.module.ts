@@ -10,6 +10,9 @@ import { UserService } from './user/user.service';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmDialogComponent } from './tools/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +21,21 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     DashboardComponent,
     UserListComponent,
-    UserEditComponent
+    UserEditComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
     UserService
+  ],
+  entryComponents: [
+    ConfirmDialogComponent
   ],
   bootstrap: [AppComponent]
 })
