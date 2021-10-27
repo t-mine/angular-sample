@@ -1,0 +1,6 @@
+<ul *ngFor="let item of items; index as i">
+    <li>{{item}} <button (click)="removeTodo(i)">削除</button></li>
+</ul>
+
+<input type="text" #todo>
+<button (click)="addTodo(todo.value)">追加</button>
