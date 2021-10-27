@@ -10,6 +10,7 @@ import { UserService } from './user/user.service';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmDialogComponent } from './tools/confirm-dialog/confirm-dialog.component';
@@ -28,6 +29,7 @@ import { ConfirmDialogComponent } from './tools/confirm-dialog/confirm-dialog.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule
   ],
