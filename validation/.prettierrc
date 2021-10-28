@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "endOfLine": "crlf",
+  "printWidth": 140,
+  "tabWidth": 2
+}
