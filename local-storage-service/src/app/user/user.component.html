@@ -1,8 +1,19 @@
-<p>user works!</p>
-<div>
-  {{ items }}
-</div>
-<button (click)="clear()">クリア</button>
+<form>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Company</th>
+    </tr>
+    <tr>
+      <td><input type="text" name="id" [(ngModel)]="id" /></td>
+      <td><input type="text" name="name" [(ngModel)]="name" /></td>
+      <td><input type="text" name="company" [(ngModel)]="company" /></td>
+    </tr>
+  </table>
+  <button (click)="add()">追加</button>
+  <button (click)="clear()">クリア</button>
+</form>
 
 <div>
   【一覧】

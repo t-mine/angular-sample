@@ -12,36 +12,35 @@ export class UserComponent implements OnInit {
   items: IMyItem[] | undefined;
   dataSubs = new Subscription();
 
+  id: string = '';
+  name: string = '';
+  company: string = '';
+
   constructor(
     private localStorageService: LocalStorageService
   ) { }
 
   ngOnInit(): void {
-
     this.localStorageService.subject.subscribe((items: IMyItem[]) => {
-      console.log(items);
       this.items = items;
     });
+    this.localStorageService.fetch().subscribe((items: IMyItem[]) => {
+      this.items = items;
+    });
+  }
 
-    const item1: IMyItem = {
-      id: 1,
-      name: '田中太郎',
-      companyName: 'A社'
+  add(): void {
+    if(!this.id) {
+      return;
+    }
+    const item: IMyItem = {
+      id: Number(this.id),
+      name: this.name,
+      companyName: this.company
     };
-    const item2: IMyItem = {
-      id: 2,
-      name: '佐藤太郎',
-      companyName: 'C社'
-    };
-    this.localStorageService.add(item1).add(item2);
+    console.log(item);
 
-    const item3: IMyItem = {
-      id: 3,
-      name: '佐藤太郎',
-      companyName: 'F社'
-    };
-
-    this.localStorageService.add(item3);
+    this.localStorageService.add(item);
   }
 
   clear(): void {
