@@ -1,1 +1,21 @@
 <p>user works!</p>
+<div>
+  {{ items }}
+</div>
+<button (click)="clear()">クリア</button>
+
+<div>
+  【一覧】
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Company</th>
+    </tr>
+    <tr *ngFor="let item of items">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.companyName }}</td>
+    </tr>
+  </table>
+</div>
